@@ -1,0 +1,108 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    background-color: rgb(50, 50, 50);
+    color: white;
+    font-family: 'Satisfy', cursive;
+}
+h1 {
+    text-align: center;
+    font-size: 40px;
+}
+p {
+    text-align: center;
+    color: black;
+}
+/* nav */
+div.logo {
+    margin-right: 70px;
+    background-image: url("../imagens/logo.jpg");
+    background-size: cover;
+    width: 100px;
+    height: 100px;
+    background-color: white;
+    border-radius: 50%;
+}
+nav {
+    position: sticky;
+    top: 0;
+    padding: 10px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    background-color: #F2EBC9;
+}
+ul.nav {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+}
+ul.nav li {
+    padding: 20px;
+    float: left;
+    font-size: 20px;
+    background-color: #F2EBC9;
+}
+a {
+    text-decoration: none;
+    color: black;
+}
+/* slide */
+section.slide {
+    height: 400px;
+    background-color: rgb(150, 150, 150);
+}
+/* destaque */
+section.destaque {
+    padding: 50px 0;
+    background-color: #8C593B;
+}
+div.destaque {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+div.destaque > div {
+    margin: 50px;
+    width: 350px;
+    height: 350px;
+    background-color: white;
+}
+section.rodape {
+    height: 200px;
+    background-color: rgb(150, 150, 150);
+}
+@media screen and (max-width: 720px) {
+    /* nav */
+    nav {
+        padding: 0;
+        position: initial;
+        display: initial;
+    }
+    div.logo {
+        margin: auto;
+        margin-bottom: 20px;
+        width: 100px;
+        height: 100px;
+    }
+    ul.nav li {
+        float: none;
+        text-align: center;
+    }
+    /* destaque */
+    div.destaque > div {
+        margin: 50px;
+        width: 250px;
+        height: 250px;
+    }
+}
+@media screen and (max-width: 450px) {
+    /* destaque */
+    div.destaque > div {
+        margin: 50px 0;
+    }
+}
