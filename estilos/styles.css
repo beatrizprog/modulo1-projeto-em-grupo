@@ -1,59 +1,52 @@
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+    margin: 0; /* "reseta" margin dos elementos para 0 */
+    padding: 0; /* "reseta" padding dos elementos para 0 */
+    box-sizing: border-box; /* ajuda na responsividade; calcula margin e padding junto com width */
 }
 body {
-    background-color: rgb(50, 50, 50);
-    color: white;
+    background-color: #F2EBC9;
+    color: white; /* cor do texto */
     font-family: 'Satisfy', cursive;
 }
 h1 {
-    text-align: center;
+    text-align: center; /* alinha o h1 no centro */
     font-size: 40px;
 }
 p {
-    text-align: center;
-    color: black;
+    text-align: justify; /* alinha o p como escrita de jornal: justificado */
+    font-size: 25px;
 }
 /* nav */
+nav {
+    position: sticky; /* fixa a barra de navegação quando rola a página */
+    top: 0; /* funciona junto com "position:sticky" a partir do ponto 0 da tela */
+    padding: 10px;
+    display: flex; /* posiciona logo e links de navegação lado a lado */
+    justify-content: center; /* centraliza na horizontal */
+    align-items: center; /* centraliza na vertical */
+    background: rgba(242, 235, 201, 0.95); /* cor de fundo e opacidade 0.95 */
+}
 div.logo {
-    margin-right: 70px;
-    background-image: url("../imagens/logo.jpg");
-    background-size: cover;
+    margin-right: 70px; /* distância da logo com os links de navegação */
+    background-image: url("../imagens/logo.jpg"); /* logo */
+    background-size: cover; /* aparece toda a imagem */
     width: 100px;
     height: 100px;
-    background-color: white;
-    border-radius: 50%;
-}
-nav {
-    position: sticky;
-    top: 0;
-    padding: 10px;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: center;
-    background-color: #F2EBC9;
-}
-ul.nav {
-    margin: 0;
-    padding: 0;
-    list-style-type: none;
+    border-radius: 50%; /* arrendonda a imagam para um circulo */
 }
 ul.nav li {
     padding: 20px;
-    float: left;
-    font-size: 20px;
-    background-color: #F2EBC9;
+    display: inline-block; /* tranforma a lista (links de navegação), deixando os itens lado a lado */
+    font-size: 25px;
+    background: rgba(242, 235, 201, 0.0);
 }
 a {
-    text-decoration: none;
+    text-decoration: none; /* tira a linha abaixo dos links de navegação */
     color: black;
 }
 /* slide */
 section.slide {
-    height: 400px;
+    height: 400px; /* altura de seção slide */
     background-color: rgb(150, 150, 150);
 }
 /* destaque */
@@ -62,47 +55,85 @@ section.destaque {
     background-color: #8C593B;
 }
 div.destaque {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
+    display: flex; /* posiciona itens de destaque lado a lado */
+    justify-content: center; /* centraliza na horizontal */
+    flex-wrap: wrap; /* "quebra" de itens de destaque quando a tela muda de tamanho */
 }
-div.destaque > div {
+div.destaque > div { /* filhos da div.destaque; neste caso todas as sub divs */
+    background-image: url('../imagens/logo.jpg'); /* itens */
+    background-size: cover; /* aparece toda a imagem */
     margin: 50px;
     width: 350px;
     height: 350px;
+    flex-shrink: 0; /* impede que os itens se "quebre"; manteram seus tamanhos */
     background-color: white;
 }
-section.rodape {
+/* quem somos */
+section.quem-somos {
+    padding: 50px;
+    background-color: #8C593B;
+}
+div.texto-foto {
+    margin: 50px auto;
+    width: 800px;
+}
+div.foto {
+    margin: 0 0 30px 30px;
+    width: 250px;
+    height: 250px;
+    float: right; /* faz a foto "flutuar" para direita, com outros elementos envolta */
+    background-color: white;
+}
+div.texto-foto-2 {
+    margin: 50px auto;
+    width: 800px;
+}
+div.foto-2 {
+    margin: 0 30px 30px 0;
+    width: 250px;
+    height: 250px;
+    float: left; /* faz a foto "flutuar" para esquerda, com outros elementos envolta */
+    background-color: white;
+}
+/* equipe */
+section.equipe {
+    padding: 50px;
+    height: 500px;
+    background-color: #8C593B;
+}
+/* contato */
+section.contato {
+    padding: 50px;
+    height: 500px;
+    background-color: #8C593B;
+}
+/* rodapé */
+footer.rodape {
     height: 200px;
     background-color: rgb(150, 150, 150);
 }
-@media screen and (max-width: 720px) {
+/* tudo abaixo é para telas pequenas */
+@media only screen and (max-width: 900px) {
     /* nav */
-    nav {
+    nav { /* desfaz todas as propriedades deste seletor para o estado inicial */
         padding: 0;
         position: initial;
+        top: initial;
         display: initial;
     }
     div.logo {
-        margin: auto;
-        margin-bottom: 20px;
+        margin: 40px auto; /* centraliza a logo */
         width: 100px;
         height: 100px;
     }
-    ul.nav li {
-        float: none;
+    ul.nav li { /* transforma os links de navegação de linha para bloco; um debaixo do outro */
+        display: block;
         text-align: center;
     }
     /* destaque */
-    div.destaque > div {
-        margin: 50px;
+    div.destaque > div { /* diminui os tamanhos dos itens */
+        margin: 25px;
         width: 250px;
         height: 250px;
-    }
-}
-@media screen and (max-width: 450px) {
-    /* destaque */
-    div.destaque > div {
-        margin: 50px 0;
     }
 }
