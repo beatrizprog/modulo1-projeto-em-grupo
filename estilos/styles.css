@@ -4,19 +4,34 @@
     padding: 0; /* "reseta" padding dos elementos para 0 */
     box-sizing: border-box; /* ajuda na responsividade; calcula margin e padding junto com width */
 }
+/* paletas de cores
+rosa #F390A2
+areia #F1EBDF
+marrom #8D5B3A
+marrom claro #987358
+azul #92D2C1
+*/
 body {
-    background-color: #8c583a;
+    background-color: #8D5B3A;
     color: white; /* cor do texto */
     font-family: 'Satisfy', cursive;
 }
 h1 {
+    padding: 10px;
+    display: inline;
     text-align: center; /* alinha o h1 no centro */
     font-size: 40px;
+    background-color: #92D2C1;
+    box-shadow: -5px -5px #92D2C1;
     text-shadow: 0 0 2px black;
+    border: 2px dashed black;
+    border-radius: 25px;
 }
 p {
+    font-family: Arial, Helvetica, sans-serif;
     text-align: justify; /* alinha o p como escrita de jornal: justificado */
     font-size: 25px;
+    color: #987358;
 }
 /* nav */
 nav {
@@ -26,30 +41,33 @@ nav {
     display: flex; /* posiciona logo e links de navegação lado a lado */
     justify-content: center; /* centraliza na horizontal */
     align-items: center; /* centraliza na vertical */
-    background: rgba(140, 88, 58, 0.95); /* cor de fundo e opacidade 0.95 */
+    background: rgba(141, 91, 58, 0.95); /* cor de fundo e opacidade 0.95 */
 }
 div.logo {
     margin-right: 100px; /* distância da logo com os links de navegação */
-    background-image: url("../imagens/logo.png"); /* logo */
+    background-image: url("../imagens/logo.jpg"); /* logo */
     background-size: cover; /* aparece toda a imagem */
     width: 100px;
     height: 100px;
     border-radius: 50%; /* arrendonda a imagem para um circulo */
-    box-shadow: 0 0 0 5px pink;
+    box-shadow: 0 0 0 5px #F390A2;
+    border: 2px dashed black;
 }
 ul.nav li {
-    padding: 20px 50px;
+    margin: 20px 50px;
     display: inline-block; /* tranforma a lista (links de navegação), deixando os itens lado a lado */
     font-size: 25px;
-    background: rgba(140, 88, 58, 0);
     border-radius: 50px;
+    border: 2px dashed rgba(0, 0, 0, 0);
 }
 a {
     text-decoration: none; /* tira a linha abaixo dos links de navegação */
     color: white;
 }
 ul.nav li:hover {
-    box-shadow: 0 0 0 5px pink;
+    background-color: #F390A2;
+    box-shadow: -5px 5px #F390A2;
+    border: 2px dashed black;
 }
 /* slide */
 section.slide {
@@ -61,75 +79,77 @@ img.slide {
     height: 350px;
 }
 /* destaque */
-section.destaque {
+section.produtos {
     padding: 50px 0;
-    background-color: #92D2C1;
+    background-image: url('../imagens/estampa-2.jpg');
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
-div.destaque {
+div.produtos {
     display: flex; /* posiciona itens de destaque lado a lado */
     justify-content: center; /* centraliza na horizontal */
     flex-wrap: wrap; /* "quebra" de itens de destaque quando a tela muda de tamanho */
 }
-div.destaque > div { /* filhos da div.destaque; neste caso todas as sub divs */
+div.produtos > div { /* filhos da div.destaque; neste caso todas as sub divs */
     margin: 50px;
     width: 250px;
-    height: 300px;
+    height: 320px;
     flex-shrink: 0; /* impede que os itens se "quebre"; manteram seus tamanhos */
-    background-color: white;
     border-radius: 20px;
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
 }
 div.itens {
     width: 250px;
     height: 250px;
-    border-radius: 20px 20px 0 0;
+    border-radius: 20px;
+    box-shadow: 5px 5px #F390A2;
 }
 img.itens {
     width: 250px;
     height: 250px;
-    border-radius: 20px 20px 0 0;
+    border-radius: 20px;
 }
 p.quero {
     padding: 10px 100px;
+    width: 250px;
     height: 50px;
-    background-color: #8c583a;
-    border-radius: 0 0 20px 20px;
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #8D5B3A;
+    color: white;
+    border-radius: 20px;
+    box-shadow: 5px 5px #92D2C1;
 }
 /* quem somos */
 section.quem-somos {
     padding: 50px;
-    background-color: #92D2C1;
+    background-image: url('../imagens/estampa-2.jpg');
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 div.texto-foto {
-    margin: 50px auto;
-    width: 800px;
-}
-div.texto-foto > p {
-    font-family: Arial, Helvetica, sans-serif;
-    text-shadow: 0 0 1px black;
+    margin: 50px auto 0;
+    padding: 25px;
+    width: 900px;
+    background-color: #F1EBDF;
+    border: 2px dashed black;
+    border-radius: 25px;
 }
 div.foto {
-    margin: 0 0 30px 30px;
-    width: 250px;
-    height: 250px;
+    margin: 0 0 0 30px;
+    width: 350px;
+    height: 350px;
     float: right; /* faz a foto "flutuar" para direita, com outros elementos envolta */
     background-color: white;
 }
-div.texto-foto-2 {
-    margin: 50px auto;
-    width: 800px;
-}
-div.texto-foto-2 > p {
-    font-family: Arial, Helvetica, sans-serif;
-    text-shadow: 0 0 1px black;
-}
 div.foto-2 {
-    margin: 0 30px 30px 0;
-    width: 250px;
-    height: 250px;
+    margin: 0 30px 0 0;
+    width: 350px;
+    height: 350px;
     float: left; /* faz a foto "flutuar" para esquerda, com outros elementos envolta */
     background-color: white;
 }
@@ -137,12 +157,18 @@ div.foto-2 {
 section.equipe {
     padding: 50px;
     height: 500px;
-    background-color: #92D2C1;
+    background-image: url('../imagens/estampa-2.jpg');
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 /* contato */
 section.contato {
     padding: 50px;
-    background-color: #92D2C1;
+    background-image: url('../imagens/estampa-2.jpg');
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 div.contato {
     margin: 50px auto;
@@ -165,7 +191,7 @@ input, textarea, button {
     padding: 5px 10px;
     border: none;
     border-radius: 7px;
-    box-shadow: 5px 5px 0 pink;
+    box-shadow: 5px 5px 0 #F390A2;
 }
 textarea {
     width: 100%;
@@ -175,7 +201,7 @@ textarea {
 button.submit {
     margin-top: 10px;
     padding: 10px;
-    box-shadow: 5px 5px 0 pink;
+    box-shadow: 5px 5px 0 #F390A2;
 }
 button:hover {
     cursor: pointer;
@@ -187,7 +213,7 @@ footer.rodape {
 }
 /* direitos */
 div.direitos {
-    background-color: #8c583a;
+    background-color: #8D5B3A;
 }
 p.direitos {
     padding: 10px;
