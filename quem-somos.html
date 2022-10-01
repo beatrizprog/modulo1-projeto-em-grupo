@@ -6,6 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="estilos/styles.css">
     <title>Quem Somos?</title>
+    <script src="scripts/scripts.js"></script>
     <style>
         /* fonte importada do Google Fonts */
         @import url('https://fonts.googleapis.com/css2?family=Satisfy&display=swap');
@@ -14,7 +15,7 @@
 <body>
     <!-- barra de navegação -->
     <nav>
-        <a href="index.html"><div class="logo"></div></a>
+        <a href="index.html"><div id="logo"></div></a>
         <ul class="nav">
             <a href="index.html"><li>home</li></a>
             <a href="quem-somos.html"><li>quem somos</li></a>
@@ -23,9 +24,17 @@
             <a href="contato.html"><li>contato</li></a>
         </ul>
     </nav>
+    <div id="nav"></div>
     <!-- seção de slide -->
     <section class="slide">
-        <img src="imagens/dagua.png" alt="" class="slide">
+        <img id="myImage" src="imagens/slide-1.jpg" width="800" height="auto">
+        <div class="img-button">
+            <button onclick="document.getElementById('myImage').src='imagens/slide-1.jpg'"></button>
+            <button onclick="document.getElementById('myImage').src='imagens/slide-2.jpg'"></button>
+            <button onclick="document.getElementById('myImage').src='imagens/img-1.jpg'"></button>
+            <button onclick="document.getElementById('myImage').src='imagens/img-2.jpg'"></button>
+            <button onclick="document.getElementById('myImage').src='imagens/img-3.jpg'"></button>
+        </div>
     </section>
     <!-- seção de quem somos -->
     <section class="quem-somos">
@@ -60,7 +69,14 @@
     </section>
     <!-- rodapé -->
     <footer class="rodape">
-        <p>rodapé</p>
+        <ul class="rodape">
+            <a href="index.html"><li>Home</li></a>
+            <a href="quem-somos.html"><li>Quem somos</li></a>
+            <a href="produtos.html"><li>Produtos</li></a>
+            <a href="equipe.html"><li>Equipe</li></a>
+            <a href="contato.html"><li>Contato</li></a>
+        </ul>
+        <img src="imagens/dagua.png" alt="" width="250" height="250">
     </footer>
     <!-- direitos -->
     <div class="direitos">

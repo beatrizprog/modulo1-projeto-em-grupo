@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="estilos/styles.css">
     <title>Gostinho de Chocolate - Doces gourmet</title>
+    <script src="scripts/scripts.js"></script>
     <style>
         /* fonte importada do Google Fonts */
         @import url('https://fonts.googleapis.com/css2?family=Satisfy&display=swap');
@@ -14,7 +15,7 @@
 <body>
     <!-- barra de navegação -->
     <nav>
-        <a href="index.html"><div class="logo"></div></a>
+        <a href="index.html"><div id="logo"></div></a>
         <ul class="nav">
             <a href="index.html"><li>home</li></a>
             <a href="quem-somos.html"><li>quem somos</li></a>
@@ -23,9 +24,17 @@
             <a href="contato.html"><li>contato</li></a>
         </ul>
     </nav>
+    <div id="nav"></div>
     <!-- seção de slide -->
     <section class="slide">
-        <img src="imagens/dagua.png" alt="" class="slide">
+        <img id="myImage" src="imagens/slide-1.jpg" width="800" height="auto">
+        <div class="img-button">
+            <button onclick="document.getElementById('myImage').src='imagens/slide-1.jpg'"></button>
+            <button onclick="document.getElementById('myImage').src='imagens/slide-2.jpg'"></button>
+            <button onclick="document.getElementById('myImage').src='imagens/img-1.jpg'"></button>
+            <button onclick="document.getElementById('myImage').src='imagens/img-2.jpg'"></button>
+            <button onclick="document.getElementById('myImage').src='imagens/img-3.jpg'"></button>
+        </div>
     </section>
     <!-- seção de destaque de produtos -->
     <section class="produtos">
@@ -34,25 +43,40 @@
         <div class="produtos">
             <div>
                 <div class="itens"><img src="imagens/logo-2.jpg" alt="" class="itens"></div>
-                <div><p class="quero">quero</p></div>
+                <span style="cursor:pointer" onclick="openNav()"><div><p class="quero">quero</p></div></span>
             </div>
             <div>
                 <div class="itens"><img src="imagens/logo.jpg" alt="" class="itens"></div>
-                <div><p class="quero">quero</p></div>
+                <span style="cursor:pointer" onclick="openNav()"><div><p class="quero">quero</p></div></span>
             </div>
             <div>
                 <div class="itens"><img src="imagens/logo-2.jpg" alt="" class="itens"></div>
-                <div><p class="quero">quero</p></div>
+                <span style="cursor:pointer" onclick="openNav()"><div><p class="quero">quero</p></div></span>
             </div>
             <div>
                 <div class="itens"><img src="imagens/logo.jpg" alt="" class="itens"></div>
-                <div><p class="quero">quero</p></div>
+                <span style="cursor:pointer" onclick="openNav()"><div><p class="quero">quero</p></div></span>
             </div>
         </div>
     </section>
+    <!-- carrinho -->
+    <div id="carrinho" class="sidenav">
+        <div class="carrinho">
+            <p id="minNav" onclick="minNav()">Carrinho</p>
+            <p id="maxNav" onclick="maxNav()">Carrinho</p>
+        </div>
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">X</a>
+    </div>
     <!-- rodapé -->
     <footer class="rodape">
-        <p>rodapé</p>
+        <ul class="rodape">
+            <a href="index.html"><li>Home</li></a>
+            <a href="quem-somos.html"><li>Quem somos</li></a>
+            <a href="produtos.html"><li>Produtos</li></a>
+            <a href="equipe.html"><li>Equipe</li></a>
+            <a href="contato.html"><li>Contato</li></a>
+        </ul>
+        <img src="imagens/dagua.png" alt="" width="250" height="250">
     </footer>
     <!-- direitos -->
     <div class="direitos">
