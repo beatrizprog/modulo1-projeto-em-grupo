@@ -12,7 +12,7 @@ marrom claro #987358
 azul #92D2C1
 */
 body {
-    background-color: red;
+    background-color: white;
     color: white; /* cor do texto */
     font-family: 'Satisfy', cursive;
 }
@@ -43,7 +43,7 @@ nav {
     justify-content: center; /* centraliza na horizontal */
     align-items: center; /* centraliza na vertical */
     background: rgba(141, 91, 58, 0.95); /* cor de fundo e opacidade 0.95 */
-    z-index: 2;
+    z-index: 1;
 }
 div#nav {
     width: auto;
@@ -88,6 +88,10 @@ section.slide {
 section.slide img {
     margin: 50px auto 0;
 }
+img#myImage {
+    width: 800px;
+    height: auto;
+}
 section.slide div {
     position: relative;
     display: flex;
@@ -121,7 +125,7 @@ div.produtos {
 }
 div.produtos > div { /* filhos da div.destaque; neste caso todas as sub divs */
     margin: 50px;
-    width: 250px;
+    max-width: 250px;
     height: 320px;
     flex-shrink: 0; /* impede que os itens se "quebre"; manteram seus tamanhos */
     border-radius: 20px;
@@ -131,14 +135,14 @@ div.produtos > div { /* filhos da div.destaque; neste caso todas as sub divs */
     align-items: center;
 }
 img.itens {
-    width: 250px;
+    max-width: 250px;
     height: 250px;
     border-radius: 20px;
-    box-shadow: 5px 5px #F390A2;
+    box-shadow: 0 0 0 5px #F390A2;
 }
 p.quero {
     padding: 10px 100px;
-    width: 250px;
+    max-width: 250px;
     height: 50px;
     font-family: Arial, Helvetica, sans-serif;
     background-color: #8D5B3A;
@@ -225,7 +229,7 @@ div.quem-somos {
 div.texto-foto {
     margin: 50px auto 0;
     padding: 25px;
-    width: 900px;
+    max-width: 900px;
     background-color: #F1EBDF;
     border: 2px dashed black;
     border-radius: 25px;
@@ -264,7 +268,7 @@ section.contato {
 div.contato {
     margin: 50px auto;
     padding: 50px;
-    width: 700px;
+    max-width: 700px;
     background-color: black;
     border-radius: 20px;
 }
@@ -272,7 +276,7 @@ fieldset {
     padding: 50px;
     border-style: dashed;
 }
-div.label {
+input[type=text], [type=email], textarea {
     margin: 10px 0;
 }
 input {
@@ -290,7 +294,6 @@ textarea {
     resize: none;
 }
 button.submit {
-    margin-top: 10px;
     padding: 10px;
     box-shadow: 5px 5px 0 #F390A2;
 }
@@ -321,6 +324,82 @@ p.direitos {
     color: white;
 }
 /* tudo abaixo é para telas pequenas */
-@media only screen and (max-width: 1000px) {
-    
+@media only screen and (max-width: 1150px) {
+    ul.nav li {
+        margin: 0px 10px;
+        transition: 0.5s;
+    }
+    img#myImage {
+        width: 100%;
+    }
+    div.img-button button {
+        margin: 0 10px;
+    }
+}
+@media only screen and (max-width: 720px) {
+    nav {
+        display: block;
+        position: initial;
+    }
+    div#nav {
+        width: auto;
+        height: 0;
+    }
+    div#logo {
+        margin: 50px auto;
+    }
+    ul.nav li {
+        display: block;
+        text-align: center;
+        padding: 10px;
+    }
+}
+@media only screen and (max-width: 500px) {
+    section.quem-somos {
+        padding: 10px;
+    }
+    div.quem-somos {
+        padding: 0;
+    }
+    div.texto-foto {
+        padding: 10px;
+        display: flex;
+        flex-direction: column;
+    }
+    div.foto {
+        margin: auto;
+        width: 200px;
+        height: 200px;
+        float: initial;
+    }
+    div.foto-2 {
+        margin: auto;
+        width: 200px;
+        height: 200px;
+        float: initial;
+    }
+    section.produtos {
+        padding: 10px 0;
+    }
+    div.produtos > div {
+        margin: 10px;
+    }
+    .sidenav {
+        width: 250px;
+        right: 0;
+    }
+    section.contato {
+        padding: 10px;
+    }
+    div.contato {
+        margin: 10px auto;
+        padding: 10px;
+    }
+    fieldset {
+        padding: 10px;
+    }
+    footer.rodape {
+        flex-direction: column;
+        padding-top: 50px;
+    }
 }
