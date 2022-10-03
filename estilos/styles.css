@@ -2,7 +2,7 @@
 * {
     margin: 0; /* "reseta" margin dos elementos para 0 */
     padding: 0; /* "reseta" padding dos elementos para 0 */
-    box-sizing: border-box; /* ajuda na responsividade; calcula margin e padding junto com width */
+    box-sizing: border-box; /* ajuda na responsividade; calcula margin e padding junto com width e height */
 }
 /* paletas de cores
 rosa #F390A2
@@ -13,7 +13,6 @@ azul #92D2C1
 */
 body {
     background-color: white;
-    color: white; /* cor do texto */
     font-family: 'Satisfy', cursive;
 }
 h1 {
@@ -22,6 +21,7 @@ h1 {
     text-align: center; /* alinha o h1 no centro */
     font-size: 40px;
     background-color: #92D2C1;
+    color: white;
     box-shadow: -5px -5px #92D2C1;
     text-shadow: 0 0 2px black;
     border: 2px dashed black;
@@ -30,10 +30,15 @@ h1 {
 p {
     font-family: Arial, Helvetica, sans-serif;
     text-align: justify; /* alinha o p como escrita de jornal: justificado */
-    font-size: 25px;
+    font-size: 20px;
     color: #987358;
 }
 /* nav */
+div#nav {
+    width: auto;
+    height: 120px;
+    background-color: #8D5B3A;
+}
 nav {
     width: 100%;
     position: fixed; /* fixa a barra de navegação quando rola a página */
@@ -42,13 +47,7 @@ nav {
     display: flex; /* posiciona logo e links de navegação lado a lado */
     justify-content: center; /* centraliza na horizontal */
     align-items: center; /* centraliza na vertical */
-    background: rgba(141, 91, 58, 0.95); /* cor de fundo e opacidade 0.95 */
-    z-index: 1;
-}
-div#nav {
-    width: auto;
-    height: 120px;
-    background-color: #8D5B3A;
+    background-color: rgba(141, 91, 58, 0.95); /* cor de fundo e opacidade 0.95 */
 }
 div#logo {
     margin-right: 100px; /* distância da logo com os links de navegação */
@@ -68,14 +67,14 @@ ul.nav li {
     border-radius: 50px;
     border: 2px dashed rgba(0, 0, 0, 0);
 }
-a {
-    text-decoration: none; /* tira a linha abaixo dos links de navegação */
-    color: white;
-}
-ul.nav li:hover {
+ul.nav li:hover, li#hover {
     background-color: #F390A2;
     box-shadow: -5px 5px #F390A2;
     border: 2px dashed black;
+}
+a {
+    text-decoration: none; /* tira a linha abaixo dos links de navegação */
+    color: white;
 }
 /* slide */
 section.slide {
@@ -85,24 +84,14 @@ section.slide {
     align-items: center;
     background-image: url('../imagens/estampa-1.jpg');
 }
-section.slide img {
-    margin: 50px auto 0;
-}
 img#myImage {
-    width: 800px;
-    height: auto;
-}
-section.slide div {
-    position: relative;
-    display: flex;
-    justify-content: center;
-    margin: 20px;
+    margin: 50px auto 0;
+    width: auto;
+    max-height: 500px;
 }
 div.img-button button {
-    margin: 0 50px;
+    margin: 20px;
     padding: 10px;
-    width: 10px;
-    height: 10px;
     border-radius: 50%;
 }
 div.img-button button:hover {
@@ -125,20 +114,28 @@ div.produtos {
 }
 div.produtos > div { /* filhos da div.destaque; neste caso todas as sub divs */
     margin: 50px;
-    max-width: 250px;
-    height: 320px;
+    padding: 10px;
     flex-shrink: 0; /* impede que os itens se "quebre"; manteram seus tamanhos */
     border-radius: 20px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
+    background-color: #F1EBDF;
+    border: 2px dashed black;
 }
 img.itens {
     max-width: 250px;
-    height: 250px;
-    border-radius: 20px;
-    box-shadow: 0 0 0 5px #F390A2;
+    border-radius: 10px;
+}
+p.doce {
+    margin: 5px;
+    color: black;
+}
+p.valor {
+    margin: 5px;
+    font-family: 'Courier New', Courier, monospace;
+    color: black;
 }
 p.quero {
     padding: 10px 100px;
@@ -147,10 +144,17 @@ p.quero {
     font-family: Arial, Helvetica, sans-serif;
     background-color: #8D5B3A;
     color: white;
-    border-radius: 20px;
+    border-radius: 10px;
     box-shadow: 5px 5px #92D2C1;
 }
+p.quero:hover {
+    cursor: pointer;
+    background-color: #987358;
+}
 /* carrinho */
+.sidenav .closebtn {
+    position: absolute;
+}
 .sidenav {
     padding: 15px;
     display: none;
@@ -164,33 +168,15 @@ p.quero {
     border: 2px dashed black;
     border-radius: 25px 25px 0 0;
 }
-.sidenav a {
-    padding: 0 10px;
-    border: 2px dashed rgba(0, 0, 0, 0);
-    font-size: 25px;
-}
-.sidenav a:hover {
-    background-color: #F390A2;
-    box-shadow: -5px 5px #F390A2;
-    border: 2px dashed black;
-    border-radius: 15px;
-}
-.sidenav .closebtn {
-    position: absolute;
+div.sidenav div {
+    display: flex;
+    justify-content: center;
 }
 .sidenav p {
     display: inline;
     font-family: 'Satisfy', cursive;
     color: white;
     border: 2px dashed rgba(0, 0, 0, 0);
-}
-.closebtn {
-    top: 10px;
-    right: 10px;
-}
-div.carrinho {
-    display: flex;
-    justify-content: center;
 }
 p#maxNav {
     display: none;
@@ -215,6 +201,21 @@ p#minNav:hover {
     border-radius: 15px;
     cursor: pointer;
 }
+.closebtn {
+    top: 10px;
+    right: 10px;
+}
+.sidenav a {
+    padding: 0 10px;
+    border: 2px dashed rgba(0, 0, 0, 0);
+    font-size: 25px;
+}
+.sidenav a:hover {
+    background-color: #F390A2;
+    box-shadow: -5px 5px #F390A2;
+    border: 2px dashed black;
+    border-radius: 15px;
+}
 /* quem somos */
 section.quem-somos {
     padding: 50px;
@@ -235,27 +236,55 @@ div.texto-foto {
     border-radius: 25px;
 }
 div.foto {
+    background-image: url('../imagens/mirian.jpg');
+    background-size: cover;
     margin: 0 0 0 30px;
     width: 350px;
     height: 350px;
     float: right; /* faz a foto "flutuar" para direita, com outros elementos envolta */
     background-color: white;
+    border-radius: 20px;
+}
+div.texto-foto p::first-letter {
+    margin-left: 40px;
+}
+div.texto-foto h2 {
+    color: #987358;
+    text-align: center;
 }
 div.foto-2 {
+    background-image: url('../imagens/producao.jpg');
+    background-size: cover;
+    background-position: right;
     margin: 0 30px 0 0;
     width: 350px;
     height: 350px;
     float: left; /* faz a foto "flutuar" para esquerda, com outros elementos envolta */
     background-color: white;
+    border-radius: 20px;
 }
 /* equipe */
 section.equipe {
     padding: 50px;
-    height: 500px;
     background-image: url('../imagens/estampa-2.jpg');
     display: flex;
     flex-direction: column;
     align-items: center;
+}
+section.equipe img {
+    margin: 50px;
+    box-shadow: 0 0 0 10px #F390A2;
+    border: 2px dashed black;
+    border-radius: 25px;
+}
+section.equipe div {
+    margin: 50px;
+    padding: 10px;
+    width: 700px;
+    background-color: #F1EBDF;
+    box-shadow: 0 0 0 10px #92D2C1;
+    border: 2px dashed black;
+    border-radius: 25px;
 }
 /* contato */
 section.contato {
