@@ -14,20 +14,20 @@
 </head>
 <body>
     <!-- barra de navegação -->
+    <div id="nav"></div>
     <nav>
         <a href="index.html"><div id="logo"></div></a>
         <ul class="nav">
-            <a href="index.html"><li>home</li></a>
+            <a href="index.html"><li id="hover">home</li></a>
             <a href="quem-somos.html"><li>quem somos</li></a>
             <a href="produtos.html"><li>produtos</li></a>
             <a href="equipe.html"><li>equipe</li></a>
             <a href="contato.html"><li>contato</li></a>
         </ul>
     </nav>
-    <div id="nav"></div>
     <!-- seção de slide -->
     <section class="slide">
-        <img id="myImage" src="imagens/slide-1.jpg">
+        <img id="myImage" src="imagens/slide-1.jpg" alt="Slide de imagens">
         <div class="img-button">
             <button onclick="document.getElementById('myImage').src='imagens/slide-1.jpg'"></button>
             <button onclick="document.getElementById('myImage').src='imagens/slide-2.jpg'"></button>
@@ -42,26 +42,34 @@
         <!-- itens de produtos -->
         <div class="produtos">
             <div>
-                <div class="itens"><img src="imagens/item-5.jpeg" alt="" class="itens"></div>
-                <span style="cursor:pointer" onclick="openNav()"><div><p class="quero">quero</p></div></span>
+                <div><img src="imagens/item-5.jpeg" alt="" class="itens"></div>
+                <div><p class="doce">Doce 1</p></div>
+                <div><p class="valor">$$$</p></div>
+                <span onclick="openNav()"><div><p class="quero">quero</p></div></span>
             </div>
             <div>
-                <div class="itens"><img src="imagens/item-6.jpeg" alt="" class="itens"></div>
-                <span style="cursor:pointer" onclick="openNav()"><div><p class="quero">quero</p></div></span>
+                <div><img src="imagens/item-6.jpeg" alt="" class="itens"></div>
+                <div><p class="doce">Doce 2</p></div>
+                <div><p class="valor">$$$</p></div>
+                <span onclick="openNav()"><div><p class="quero">quero</p></div></span>
             </div>
             <div>
-                <div class="itens"><img src="imagens/item-7.jpeg" alt="" class="itens"></div>
-                <span style="cursor:pointer" onclick="openNav()"><div><p class="quero">quero</p></div></span>
+                <div><img src="imagens/item-7.jpeg" alt="" class="itens"></div>
+                <div><p class="doce">Doce 3</p></div>
+                <div><p class="valor">$$$</p></div>
+                <span onclick="openNav()"><div><p class="quero">quero</p></div></span>
             </div>
             <div>
-                <div class="itens"><img src="imagens/item-8.jpeg" alt="" class="itens"></div>
-                <span style="cursor:pointer" onclick="openNav()"><div><p class="quero">quero</p></div></span>
+                <div><img src="imagens/item-8.jpeg" alt="" class="itens"></div>
+                <div><p class="doce">Doce 4</p></div>
+                <div><p class="valor">$$$</p></div>
+                <span onclick="openNav()"><div><p class="quero">quero</p></div></span>
             </div>
         </div>
     </section>
     <!-- carrinho -->
     <div id="carrinho" class="sidenav">
-        <div class="carrinho">
+        <div>
             <p id="minNav" onclick="minNav()">Carrinho</p>
             <p id="maxNav" onclick="maxNav()">Carrinho</p>
         </div>
@@ -76,7 +84,7 @@
             <a href="equipe.html"><li>Equipe</li></a>
             <a href="contato.html"><li>Contato</li></a>
         </ul>
-        <img src="imagens/dagua.png" alt="" width="250" height="250">
+        <img src="imagens/dagua.png" alt="Marca d'agua da Gostinho de Chocolate - Doces gourmet" width="250" height="250">
     </footer>
     <!-- direitos -->
     <div class="direitos">
