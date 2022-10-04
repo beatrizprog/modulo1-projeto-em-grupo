@@ -119,7 +119,6 @@ div.produtos > div { /* filhos da div.destaque; neste caso todas as sub divs */
     border-radius: 20px;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
     align-items: center;
     background-color: #F1EBDF;
     border: 2px dashed black;
@@ -129,6 +128,7 @@ img.itens {
     border-radius: 10px;
 }
 p.doce {
+    font-size: 15px;
     margin: 5px;
     color: black;
 }
@@ -215,6 +215,46 @@ p#minNav:hover {
     box-shadow: -5px 5px #F390A2;
     border: 2px dashed black;
     border-radius: 15px;
+}
+div#itensCarrinho {
+    margin-top: 20px;
+    height: 300px;
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    background-color: white;
+    overflow-y: scroll;
+}
+#imgNomeValor {
+    display: flex;
+    justify-content: start;
+}
+img.miniImg {
+    width: 100px;
+    height: 100px;
+}
+div#itensCarrinho p {
+    font-family: 'Courier New', Courier, monospace;
+    color: black;
+    display: inline;
+    text-align: left;
+}
+#total {
+    height: 50px;
+    display: flex;
+    align-items: center;
+    font-family: 'Courier New', Courier, monospace;
+    background-color: #F1EBDF;
+    color: black;
+}
+#comprar {
+    height: 60px;
+    display: flex;
+    align-items: center;
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #F390A2;
+    color: white;
+    cursor: pointer;
 }
 /* quem somos */
 section.quem-somos {
