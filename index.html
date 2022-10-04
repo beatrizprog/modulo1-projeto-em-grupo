@@ -18,11 +18,11 @@
     <nav>
         <a href="index.html"><div id="logo"></div></a>
         <ul class="nav">
-            <a href="index.html"><li id="hover">home</li></a>
-            <a href="quem-somos.html"><li>quem somos</li></a>
-            <a href="produtos.html"><li>produtos</li></a>
-            <a href="equipe.html"><li>equipe</li></a>
-            <a href="contato.html"><li>contato</li></a>
+            <a href="index.html"><li id="hover">Home</li></a>
+            <a href="quem-somos.html"><li>Quem somos</li></a>
+            <a href="produtos.html"><li>Produtos</li></a>
+            <a href="equipe.html"><li>Equipe</li></a>
+            <a href="contato.html"><li>Contato</li></a>
         </ul>
     </nav>
     <!-- seção de slide -->
@@ -38,32 +38,32 @@
     </section>
     <!-- seção de destaque de produtos -->
     <section class="produtos">
-        <h1>destaques de produtos</h1>
+        <h1>Destaques de produtos</h1>
         <!-- itens de produtos -->
         <div class="produtos">
             <div>
                 <div><img src="imagens/item-5.jpeg" alt="" class="itens"></div>
-                <div><p class="doce">Doce 1</p></div>
-                <div><p class="valor">$$$</p></div>
-                <span onclick="openNav()"><div><p class="quero">quero</p></div></span>
+                <div><p class="doce">Caixa com 4 doces gourmet</p></div>
+                <div><p class="valor">R$ 12,00</p></div>
+                <span onclick="openNav('item-5.jpeg', 'Caixa com 4 doces gourmet ', 12.00)" ><div><p class="quero">quero</p></div></span>
             </div>
             <div>
                 <div><img src="imagens/item-6.jpeg" alt="" class="itens"></div>
-                <div><p class="doce">Doce 2</p></div>
-                <div><p class="valor">$$$</p></div>
-                <span onclick="openNav()"><div><p class="quero">quero</p></div></span>
+                <div><p class="doce">Bolo piscina</p></div>
+                <div><p class="valor">R$ 60,00</p></div>
+                <span onclick="openNav('item-6.jpeg', 'Bolo piscina ', 60.00)"><div><p class="quero">quero</p></div></span>
             </div>
             <div>
-                <div><img src="imagens/item-7.jpeg" alt="" class="itens"></div>
-                <div><p class="doce">Doce 3</p></div>
-                <div><p class="valor">$$$</p></div>
-                <span onclick="openNav()"><div><p class="quero">quero</p></div></span>
+                <div><img src="imagens/item-3.jpeg" alt="" class="itens"></div>
+                <div><p class="doce">Cento Docinho gourmet</p></div>
+                <div><p class="valor">R$ 200,00</p></div>
+                <span onclick="openNav('item-3.jpeg', 'Cento docinho gourmet ', 200.00)"><div><p class="quero">quero</p></div></span>
             </div>
             <div>
                 <div><img src="imagens/item-8.jpeg" alt="" class="itens"></div>
-                <div><p class="doce">Doce 4</p></div>
-                <div><p class="valor">$$$</p></div>
-                <span onclick="openNav()"><div><p class="quero">quero</p></div></span>
+                <div><p class="doce">Caixa com 4 doces gourmet</p></div>
+                <div><p class="valor">R$ 12,00</p></div>
+                <span onclick="openNav('item-8.jpeg', 'Caixa com 4 doces gourmet ', 12.00)"><div><p class="quero">quero</p></div></span>
             </div>
         </div>
     </section>
@@ -74,6 +74,9 @@
             <p id="maxNav" onclick="maxNav()">Carrinho</p>
         </div>
         <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">X</a>
+        <div id="itensCarrinho"></div>
+        <div id="total"></div>
+        <div id="comprar">COMPRAR</div>
     </div>
     <!-- rodapé -->
     <footer class="rodape">
