@@ -12,9 +12,18 @@ function scrollFunction() {
     }
 }
 // Carrinho
-function openNav() {
+function openNav(imgItem, nomeProduto, valor) {
     document.getElementById("carrinho").style.display = "block";
+    valor = valor.toFixed(2);
+    imgItem = '<img src="imagens/' + imgItem + '" class="miniImg">'
+    document.getElementById("itensCarrinho").innerHTML +=
+    '<div id="imgNomeValor"><div>' + imgItem + '</div><div><p>' + nomeProduto + '<br>Valor: R$' + valor + '</p></div></div>';
+    total = total + parseInt(valor);
+    document.getElementById("total").innerHTML = 'Total R$' + total.toFixed(2);
+
 }
+var total = 0;
+
 function closeNav() {
     document.getElementById("carrinho").style.display = "none";
 }
