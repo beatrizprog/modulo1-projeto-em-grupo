@@ -86,7 +86,7 @@ section.slide {
 }
 img#myImage {
     margin: 50px auto 0;
-    width: auto;
+    max-width: 100%;
     max-height: 500px;
 }
 div.img-button button {
@@ -135,19 +135,21 @@ p.doce {
 p.valor {
     margin: 5px;
     font-family: 'Courier New', Courier, monospace;
+    font-weight: bold;
     color: black;
 }
-p.quero {
-    padding: 10px 100px;
-    max-width: 250px;
+p.adicionar {
+    padding: 10px 0;
+    width: 250px;
     height: 50px;
+    text-align: center;
     font-family: Arial, Helvetica, sans-serif;
     background-color: #8D5B3A;
     color: white;
     border-radius: 10px;
     box-shadow: 5px 5px #92D2C1;
 }
-p.quero:hover {
+p.adicionar:hover {
     cursor: pointer;
     background-color: #987358;
 }
@@ -227,7 +229,7 @@ div#itensCarrinho {
 }
 #imgNomeValor {
     display: flex;
-    justify-content: start;
+    justify-content: space-between;
 }
 img.miniImg {
     width: 100px;
@@ -235,6 +237,7 @@ img.miniImg {
 }
 div#itensCarrinho p {
     font-family: 'Courier New', Courier, monospace;
+    width: 185px;
     color: black;
     display: inline;
     text-align: left;
@@ -258,7 +261,7 @@ div#itensCarrinho p {
 }
 /* quem somos */
 section.quem-somos {
-    padding: 50px;
+    padding: 50px 0;
     background-image: url('../imagens/estampa-2.jpg');
 }
 div.quem-somos {
@@ -268,7 +271,7 @@ div.quem-somos {
     align-items: center;
 }
 div.texto-foto {
-    margin: 50px auto 0;
+    margin: 50px auto;
     padding: 25px;
     max-width: 900px;
     background-color: #F1EBDF;
@@ -303,6 +306,20 @@ div.foto-2 {
     background-color: white;
     border-radius: 20px;
 }
+/* produtos */
+div#cardapio {
+    margin: 50px 0 0;
+    padding: 10px;
+    max-width: 700px;
+    background-color: #F1EBDF;
+    box-shadow: 0 0 0 10px #F390A2;
+    border: 2px solid black;
+    border-radius: 25px;
+}
+div#cardapio a {
+    text-decoration: underline;
+    color: black;
+}
 /* equipe */
 section.equipe {
     padding: 50px;
@@ -312,6 +329,7 @@ section.equipe {
     align-items: center;
 }
 section.equipe img {
+    max-width: 100%;
     margin: 50px;
     box-shadow: 0 0 0 10px #F390A2;
     border: 2px dashed black;
@@ -320,7 +338,7 @@ section.equipe img {
 section.equipe div {
     margin: 50px;
     padding: 10px;
-    width: 700px;
+    max-width: 700px;
     background-color: #F1EBDF;
     box-shadow: 0 0 0 10px #92D2C1;
     border: 2px dashed black;
@@ -328,7 +346,7 @@ section.equipe div {
 }
 /* contato */
 section.contato {
-    padding: 50px;
+    padding: 50px 0;
     background-image: url('../imagens/estampa-2.jpg');
     display: flex;
     flex-direction: column;
@@ -394,38 +412,40 @@ p.direitos {
 }
 /* tudo abaixo é para telas pequenas */
 @media only screen and (max-width: 1150px) {
+    /* navegação */
     ul.nav li {
         margin: 0px 10px;
-        transition: 0.5s;
-    }
-    img#myImage {
-        width: 100%;
-    }
-    div.img-button button {
-        margin: 0 10px;
     }
 }
-@media only screen and (max-width: 720px) {
+@media only screen and (max-width: 750px) {
+    /* navegação */
     nav {
         display: block;
         position: initial;
     }
     div#nav {
-        width: auto;
         height: 0;
     }
     div#logo {
         margin: 50px auto;
     }
+    ul.nav {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
     ul.nav li {
-        display: block;
-        text-align: center;
-        padding: 10px;
+        margin: 10px 0;
     }
 }
-@media only screen and (max-width: 500px) {
+@media only screen and (max-width: 550px) {
+    /* slide */
+    div.img-button button {
+        margin: 10px;
+    }
+    /* quem somos */
     section.quem-somos {
-        padding: 10px;
+        padding: 10px 0;
     }
     div.quem-somos {
         padding: 0;
@@ -447,26 +467,40 @@ p.direitos {
         height: 200px;
         float: initial;
     }
+    /* produtos */
     section.produtos {
         padding: 10px 0;
     }
     div.produtos > div {
-        margin: 10px;
+        margin: 50px 0;
     }
+    /* carrinho */
     .sidenav {
         width: 250px;
         right: 0;
     }
+    /* equipe */
+    section.equipe {
+        padding: 10px 0;
+    }
+    section.equipe img {
+        margin: 50px 10px;
+    }
+    section.equipe div {
+        margin: 50px 10px;
+    }
+    /* contato */
     section.contato {
-        padding: 10px;
+        padding: 10px 0;
     }
     div.contato {
-        margin: 10px auto;
+        margin: 50px auto;
         padding: 10px;
     }
     fieldset {
         padding: 10px;
     }
+    /* rodapé */
     footer.rodape {
         flex-direction: column;
         padding-top: 50px;
