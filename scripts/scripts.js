@@ -1,4 +1,4 @@
-// Quando rolar para baixo, 50px da parte superior do documento, redimensione a margin da barra de navegação e o tamanho da logo
+// Quando rolar para baixo, 50px da parte superior do documento, redimensione o tamanho da logo
 window.onscroll = function() {
     scrollFunction()
 }
@@ -12,17 +12,26 @@ function scrollFunction() {
     }
 }
 // Carrinho
+i = 0;
 function openNav(imgItem, nomeProduto, valor) {
+    i++;
+    var campo = "imgNomeValor" + i;
     document.getElementById("carrinho").style.display = "block";
     valor = valor.toFixed(2);
     imgItem = '<img src="imagens/' + imgItem + '" class="miniImg">'
     document.getElementById("itensCarrinho").innerHTML +=
-    '<div id="imgNomeValor"><div>' + imgItem + '</div><div><p>' + nomeProduto + '<br>Valor: R$' + valor + '</p></div></div>';
-    total = total + parseInt(valor);
+    '<div id="imgNomeValor"><div id="'+campo+'"><div>' + imgItem + '</div><div><p>' + nomeProduto + '<br>Valor: R$' + valor + '</p></div><div><button onclick="excluir('+i+','+valor+')">X</button></div></div></div>';
+    total = total + parseFloat(valor);
     document.getElementById("total").innerHTML = 'Total R$' + total.toFixed(2);
-
+    
 }
 var total = 0;
+
+function excluir(campo, valor){
+    document.getElementById("imgNomeValor" + campo).style.display = "none";
+    total = total - parseFloat(valor);
+    document.getElementById("total").innerHTML = 'Total R$' + total.toFixed(2);
+}
 
 function closeNav() {
     document.getElementById("carrinho").style.display = "none";
