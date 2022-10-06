@@ -314,9 +314,11 @@ div#cardapio {
     background-color: #F1EBDF;
     box-shadow: 0 0 0 10px #F390A2;
     border: 2px solid black;
-    border-radius: 25px;
+    border-radius: 5px;
 }
 div#cardapio a {
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: bold;
     text-decoration: underline;
     color: black;
 }
@@ -330,14 +332,14 @@ section.equipe {
 }
 section.equipe img {
     max-width: 100%;
-    margin: 50px;
+    margin: 50px 0;
     box-shadow: 0 0 0 10px #F390A2;
     border: 2px dashed black;
     border-radius: 25px;
 }
 section.equipe div {
-    margin: 50px;
-    padding: 10px;
+    margin: 50px 0;
+    padding: 20px;
     max-width: 700px;
     background-color: #F1EBDF;
     box-shadow: 0 0 0 10px #92D2C1;
@@ -483,11 +485,8 @@ p.direitos {
     section.equipe {
         padding: 10px 0;
     }
-    section.equipe img {
-        margin: 50px 10px;
-    }
     section.equipe div {
-        margin: 50px 10px;
+        padding: 10px;
     }
     /* contato */
     section.contato {
