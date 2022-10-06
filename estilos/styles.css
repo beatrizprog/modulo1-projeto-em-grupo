@@ -18,7 +18,7 @@ body {
 h1 {
     padding: 10px;
     display: inline;
-    text-align: center; /* alinha o h1 no centro */
+    text-align: center;
     font-size: 40px;
     background-color: #92D2C1;
     color: white;
@@ -29,7 +29,7 @@ h1 {
 }
 p {
     font-family: Arial, Helvetica, sans-serif;
-    text-align: justify; /* alinha o p como escrita de jornal: justificado */
+    text-align: justify;
     font-size: 20px;
     color: #987358;
 }
@@ -112,10 +112,10 @@ div.produtos {
     justify-content: center; /* centraliza na horizontal */
     flex-wrap: wrap; /* "quebra" de itens de destaque quando a tela muda de tamanho */
 }
-div.produtos > div { /* filhos da div.destaque; neste caso todas as sub divs */
+div.produtos > div { /* filhos da div.produtos; neste caso todas as sub divs */
     margin: 50px;
     padding: 10px;
-    flex-shrink: 0; /* impede que os itens se "quebre"; manteram seus tamanhos */
+    flex-shrink: 0; /* impede que os itens se "quebre"; manterão seus tamanhos */
     border-radius: 20px;
     display: flex;
     flex-direction: column;
@@ -225,7 +225,7 @@ div#itensCarrinho {
     flex-direction: column;
     justify-content: start;
     background-color: white;
-    overflow-y: scroll;
+    overflow-y: scroll; /* adiciona uma barra de rolagem lateral */
 }
 #imgNomeValor {
     display: flex;
