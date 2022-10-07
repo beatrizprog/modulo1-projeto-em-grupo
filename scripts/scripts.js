@@ -49,9 +49,20 @@ function maxNav() {
 }
 // Formulário
 // Confirmação que o formulário foi enviado
-function validateForm() {
+/* function validateForm() {
     var x = document.forms["form"]["name"].value;
     if (x !== "" || x !== null) {
         alert("Sua mensagem será enviada.");
+    }
+}
+*/
+function validateForm() {
+    var conf = confirm("Deseja enviar a mensagem?");
+    if (conf == true) {
+        alert("Mensagem enviada");
+        window.location.href = "contato.html"
+        return false;
+    } else {
+        return false;
     }
 }
